@@ -1,627 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bholenath Medical Store — Mundra</title>
-<meta name="description" content="Bholenath Medical Store, Mundra — genuine medicines, OTC products and wellness essentials. Call, WhatsApp or get directions.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07539b">
+<title>Bholenath Medical Store | Mundra</title>
+<meta name="description" content="Bholenath Medical Store, Bramhapuri, Mundra. Prescription medicines, everyday healthcare essentials and wellness products. Call or WhatsApp to check availability.">
 <link rel="icon" type="image/png" href="logo-small.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#F4F7F2;
-    --paper-2:#EAF0E6;
-    --ink:#152420;
-    --ink-soft:#4C5D56;
-    --pine:#1E4B3C;
-    --pine-deep:#123329;
-    --marigold:#E8A33D;
-    --marigold-deep:#C9822A;
-    --line:#D3DECC;
-    --white:#FFFFFF;
-    --radius: 4px;
-  }
-
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Work Sans', sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    color:var(--pine-deep);
-    margin:0 0 0.4em 0;
-    font-weight:600;
-    line-height:1.15;
-  }
-  p{margin:0 0 1em 0; color:var(--ink-soft);}
-  a{color:inherit;}
-  img{max-width:100%; display:block;}
-  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
-
-  /* Focus visibility */
-  a:focus-visible, button:focus-visible{
-    outline:2px solid var(--pine);
-    outline-offset:3px;
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; transition:none !important;}
-  }
-
-  /* ===== Top bar ===== */
-  .topbar{
-    background:var(--pine-deep);
-    color:#EFF4EC;
-    font-size:0.85rem;
-  }
-  .topbar .wrap{
-    display:flex; justify-content:space-between; align-items:center;
-    padding-top:9px; padding-bottom:9px;
-    gap:12px; flex-wrap:wrap;
-  }
-  .topbar a{ text-decoration:none; color:#EFF4EC; opacity:0.9;}
-  .topbar a:hover{opacity:1;}
-  .topbar .status{
-    display:flex; align-items:center; gap:8px;
-  }
-  .dot{
-    width:7px; height:7px; border-radius:50%;
-    background:#7FD99A;
-    display:inline-block;
-    box-shadow:0 0 0 3px rgba(127,217,154,0.25);
-  }
-
-  /* ===== Header / Nav ===== */
-  header.site{
-    background:var(--paper);
-    border-bottom:1px solid var(--line);
-    position:sticky; top:0; z-index:50;
-  }
-  nav.wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    padding-top:16px; padding-bottom:16px;
-  }
-  .brand{
-    display:flex; align-items:center; gap:12px;
-    text-decoration:none;
-  }
-  .brand-mark{
-    width:42px; height:42px; border-radius:50%;
-    background:#fff;
-    border:1px solid var(--line);
-    display:flex; align-items:center; justify-content:center;
-    flex-shrink:0;
-    overflow:hidden;
-  }
-  .brand-mark img{width:100%; height:100%; object-fit:contain; padding:4px;}
-  .brand-name{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:1.15rem;
-    color:var(--pine-deep);
-    letter-spacing:-0.01em;
-  }
-  .brand-sub{
-    font-size:0.72rem;
-    color:var(--ink-soft);
-    letter-spacing:0.02em;
-  }
-  nav ul{
-    list-style:none; display:flex; gap:28px; margin:0; padding:0;
-  }
-  nav ul a{
-    text-decoration:none; color:var(--ink); font-size:0.95rem;
-    padding-bottom:4px; border-bottom:1px solid transparent;
-  }
-  nav ul a:hover{border-bottom-color:var(--marigold);}
-  .nav-toggle{display:none;}
-
-  @media (max-width:760px){
-    nav ul{display:none;}
-  }
-
-  /* ===== Hero ===== */
-  .hero{
-    background:
-      linear-gradient(100deg, rgba(18,51,41,0.94) 0%, rgba(18,51,41,0.86) 38%, rgba(18,51,41,0.55) 62%, rgba(18,51,41,0.28) 100%),
-      url('photo-storefront.jpg');
-    background-size:cover;
-    background-position:center 65%;
-    padding:76px 0 68px;
-    border-bottom:1px solid var(--line);
-  }
-  .hero .eyebrow-line{color:#B9D6C5;}
-  .hero .eyebrow-line .rule{background:var(--marigold);}
-  .hero h1{color:#fff;}
-  .hero .lede{color:#D6E2D9;}
-  .hero .btn-ghost{border-color:#8FB39E; color:#EFF4EC;}
-  .hero .btn-ghost:hover{background:rgba(255,255,255,0.08);}
-  .hero-grid{
-    display:grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap:48px;
-    align-items:center;
-  }
-  @media (max-width:820px){
-    .hero-grid{grid-template-columns:1fr;}
-  }
-  .eyebrow-line{
-    display:flex; align-items:center; gap:10px;
-    margin-bottom:18px; color:var(--pine); font-size:0.9rem;
-  }
-  .eyebrow-line .rule{width:28px; height:1px; background:var(--marigold-deep);}
-  .hero h1{
-    font-size:clamp(2.1rem, 4.2vw, 3.1rem);
-    max-width:11ch;
-  }
-  .hero .lede{
-    font-size:1.08rem;
-    max-width:46ch;
-    color:var(--ink-soft);
-  }
-  .cta-row{
-    display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;
-  }
-  .btn{
-    display:inline-flex; align-items:center; gap:9px;
-    padding:13px 22px;
-    border-radius:var(--radius);
-    text-decoration:none;
-    font-size:0.95rem;
-    font-weight:500;
-    border:1px solid transparent;
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
-  }
-  .btn:hover{transform:translateY(-1px);}
-  .btn-primary{
-    background:var(--pine);
-    color:#fff;
-    box-shadow:0 2px 0 var(--pine-deep);
-  }
-  .btn-primary:hover{box-shadow:0 3px 0 var(--pine-deep);}
-  .btn-ghost{
-    background:transparent;
-    border-color:var(--pine);
-    color:var(--pine-deep);
-  }
-  .btn-ghost:hover{background:var(--paper-2);}
-  .btn svg{width:17px; height:17px; flex-shrink:0;}
-
-  .hero-card{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:26px 26px 24px;
-  }
-  .rating-block{
-    display:flex; align-items:baseline; gap:10px; margin-bottom:6px;
-  }
-  .rating-num{
-    font-family:'Fraunces', serif;
-    font-size:2.4rem;
-    color:var(--pine-deep);
-    font-weight:600;
-  }
-  .stars{color:var(--marigold-deep); font-size:1rem; letter-spacing:1px;}
-  .rating-count{font-size:0.85rem; color:var(--ink-soft);}
-  .hero-card hr{border:none; border-top:1px solid var(--line); margin:18px 0;}
-  .info-row{
-    display:flex; gap:12px; align-items:flex-start;
-    font-size:0.92rem; margin-bottom:14px;
-  }
-  .info-row:last-child{margin-bottom:0;}
-  .info-row svg{width:18px; height:18px; margin-top:2px; flex-shrink:0; color:var(--pine);}
-  .info-row a{text-decoration:none; border-bottom:1px solid var(--line);}
-  .info-row a:hover{border-color:var(--pine);}
-  .open-tag{
-    display:inline-flex; align-items:center; gap:6px;
-    font-size:0.85rem; color:#1F7A46; font-weight:500;
-  }
-
-  /* ===== Section shell ===== */
-  section{padding:64px 0;}
-  .section-head{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    gap:24px; margin-bottom:34px; flex-wrap:wrap;
-  }
-  .section-head p{margin:0; max-width:48ch;}
-  .section-num{
-    font-family:'Fraunces', serif;
-    color:var(--marigold-deep);
-    font-size:0.9rem;
-  }
-
-  /* ===== Services ===== */
-  .services{background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .service-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  @media (max-width:820px){ .service-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:480px){ .service-grid{grid-template-columns:1fr;} }
-  .service-card{
-    background:var(--paper-2);
-    padding:28px 22px;
-  }
-  .service-card svg{width:26px; height:26px; color:var(--pine); margin-bottom:14px;}
-  .service-card h3{font-size:1.05rem; margin-bottom:6px;}
-  .service-card p{font-size:0.9rem; margin:0;}
-
-  /* ===== Gallery ===== */
-  .gallery-grid{
-    display:grid; grid-template-columns: 1fr 1fr; gap:14px;
-  }
-  .gallery-col{display:grid; grid-template-rows:1fr 1fr; gap:14px;}
-  .gallery-item{
-    display:block; border-radius:var(--radius); overflow:hidden;
-    border:1px solid var(--line);
-    aspect-ratio:1/1;
-  }
-  .gallery-item.tall{aspect-ratio:auto; height:100%;}
-  .gallery-item img{
-    width:100%; height:100%; object-fit:cover;
-    transition:transform 0.25s ease;
-  }
-  .gallery-item:hover img{transform:scale(1.03);}
-  @media (max-width:680px){
-    .gallery-grid{grid-template-columns:1fr;}
-    .gallery-item.tall{aspect-ratio:4/3;}
-  }
-
-  /* ===== About ===== */
-  .about-grid{
-    display:grid; grid-template-columns: 0.9fr 1.1fr; gap:56px; align-items:start;
-  }
-  @media (max-width:820px){ .about-grid{grid-template-columns:1fr; gap:32px;} }
-  .about-figure{
-    background:var(--pine);
-    border-radius:var(--radius);
-    aspect-ratio:4/5;
-    position:relative;
-    overflow:hidden;
-  }
-  .about-figure img{
-    width:100%; height:100%; object-fit:cover; object-position:center 30%;
-  }
-  .about-figure::after{
-    content:"";
-    position:absolute; inset:0;
-    background:radial-gradient(220px 220px at 75% 15%, rgba(232,163,61,0.22), transparent 60%);
-    pointer-events:none;
-  }
-  .about-figure-caption{
-    position:absolute; left:0; right:0; bottom:0;
-    padding:16px 18px;
-    background:linear-gradient(0deg, rgba(18,51,41,0.85), transparent);
-    color:#EFF4EC; font-size:0.82rem;
-  }
-  .about-copy p{font-size:1.02rem;}
-  .quote-strip{
-    border-left:3px solid var(--marigold-deep);
-    padding-left:18px;
-    margin:22px 0;
-    font-family:'Fraunces', serif;
-    font-size:1.15rem;
-    color:var(--pine-deep);
-    font-weight:500;
-  }
-  .badge-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;}
-  .badge{
-    font-size:0.82rem;
-    padding:7px 13px;
-    border:1px solid var(--line);
-    border-radius:999px;
-    color:var(--ink-soft);
-    background:var(--white);
-  }
-
-  /* ===== Hours / Location ===== */
-  .visit{background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .visit-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:1px;
-    background:var(--line); border:1px solid var(--line);
-  }
-  @media (max-width:760px){ .visit-grid{grid-template-columns:1fr;} }
-  .visit-panel{background:var(--paper-2); padding:34px 30px;}
-  .visit-panel h3{font-size:1.05rem; margin-bottom:16px;}
-  .hours-table{width:100%; border-collapse:collapse; font-size:0.92rem;}
-  .hours-table td{padding:6px 0; border-bottom:1px solid var(--line); color:var(--ink-soft);}
-  .hours-table tr:last-child td{border-bottom:none;}
-  .hours-table td:last-child{text-align:right; color:var(--ink);}
-  .hours-today td{color:var(--pine-deep) !important; font-weight:600;}
-  .note{
-    font-size:0.82rem; color:var(--ink-soft); margin-top:14px;
-  }
-
-  /* ===== CTA band ===== */
-  .cta-band{
-    background:
-      linear-gradient(rgba(18,51,41,0.93), rgba(18,51,41,0.93)),
-      url('logo-dark-bg.jpg');
-    background-size:cover;
-    background-position:center;
-    color:#EFF4EC;
-    text-align:center;
-    padding:64px 0;
-  }
-  .cta-band h2{color:#fff;}
-  .cta-band p{color:#C9D6CC; max-width:52ch; margin:0 auto 26px;}
-  .cta-band .cta-row{justify-content:center;}
-  .cta-band .btn-ghost{border-color:#7FA894; color:#EFF4EC;}
-  .cta-band .btn-ghost:hover{background:rgba(255,255,255,0.06);}
-
-  /* ===== Footer ===== */
-  footer{padding:40px 0 30px; font-size:0.85rem; color:var(--ink-soft);}
-  .footer-grid{
-    display:flex; justify-content:space-between; align-items:flex-start;
-    gap:24px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:28px;
-  }
-  .footer-brand{font-family:'Fraunces', serif; color:var(--pine-deep); font-size:1.05rem; margin-bottom:6px;}
-  .social-links{display:flex; gap:16px;}
-  .social-links a{
-    display:flex; align-items:center; justify-content:center;
-    width:36px; height:36px; border-radius:50%;
-    border:1px solid var(--line);
-    text-decoration:none;
-  }
-  .social-links a:hover{border-color:var(--pine);}
-  .social-links svg{width:16px; height:16px; color:var(--pine-deep);}
+:root{--blue:#07539b;--blue2:#0a70b8;--cyan:#12a6ce;--navy:#092d50;--ink:#17334d;--muted:#62788b;--pale:#eef7fc;--line:#dceaf3;--white:#fff;--shadow:0 18px 55px rgba(10,67,111,.10);--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--ink);font-family:'DM Sans',sans-serif;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit}img{max-width:100%;display:block}.container{width:min(1160px,calc(100% - 44px));margin:auto}
+a:focus-visible,button:focus-visible{outline:3px solid #20b8e2;outline-offset:4px}
+.topline{background:var(--navy);color:#e9f7ff;font-size:13px}.topline .container{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:14px}.topline a{text-decoration:none;color:#fff;font-weight:700}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,234,243,.9)}.nav{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.brand img{width:58px;height:58px;object-fit:contain}.brand-title{font:800 17px 'Manrope',sans-serif;color:var(--navy);line-height:1.2}.brand-sub{display:block;color:var(--blue2);font-size:10px;letter-spacing:1.8px;font-weight:800;margin-top:5px}.navlinks{display:flex;align-items:center;gap:27px}.navlinks a{text-decoration:none;color:#36546d;font-size:14px;font-weight:700}.navlinks a:hover{color:var(--cyan)}.nav-actions{display:flex;align-items:center;gap:10px}.menu-toggle{display:none;border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:12px;width:44px;height:44px;font-size:23px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 20px;border-radius:13px;text-decoration:none;font-weight:800;font-size:14px;border:1px solid transparent;transition:.2s ease;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn-blue{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 9px 22px rgba(7,83,155,.2)}.btn-outline{border-color:#b8d8eb;color:var(--blue);background:#fff}.btn-cyan{background:var(--cyan);color:#fff}
+.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#f4faff 0%,#eaf6fd 58%,#dff3fb 100%);padding:76px 0 72px}.hero:before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;right:-140px;top:-220px;background:rgba(18,166,206,.12)}.hero:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:18%;bottom:-210px;background:rgba(7,83,155,.07)}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:60px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-weight:800;font-size:12px;letter-spacing:1.8px;text-transform:uppercase}.eyebrow:before{content:"";width:26px;height:2px;background:var(--cyan)}h1,h2,h3{font-family:'Manrope',sans-serif;line-height:1.16;margin:0;color:var(--navy)}h1{font-size:clamp(38px,5vw,62px);letter-spacing:-2.5px;margin:18px 0 18px;max-width:720px}h1 span{color:var(--blue2)}.hero-copy{font-size:18px;color:#526d83;max-width:590px;margin:0}.hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}.hero-note{display:flex;align-items:center;gap:9px;margin-top:24px;color:#5c7488;font-size:13px;font-weight:600}.check{width:22px;height:22px;border-radius:50%;background:#d5f3fb;color:#0784ae;display:grid;place-items:center;font-size:13px;font-weight:900}
+.hero-panel{background:#fff;border:1px solid #dcecf5;border-radius:26px;padding:28px;box-shadow:var(--shadow);position:relative}.hero-panel:before{content:"";position:absolute;inset:9px;border:1px solid #e9f3f8;border-radius:19px;pointer-events:none}.panel-inner{position:relative}.panel-logo{width:92px;height:92px;object-fit:contain;margin:0 auto 12px}.panel-heading{text-align:center;font:800 18px 'Manrope',sans-serif;color:var(--navy)}.panel-caption{text-align:center;font-size:12px;color:var(--muted);margin:4px 0 20px}.panel-divider{height:1px;background:var(--line);margin:18px 0}.quick-info{display:grid;gap:15px}.quick-row{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#48647a}.quick-icon{width:38px;height:38px;flex:0 0 38px;border-radius:12px;background:var(--pale);display:grid;place-items:center;color:var(--blue);font-size:17px}.quick-row strong{display:block;color:var(--navy);font-size:13px;margin-bottom:2px}.quick-row a{text-decoration:none;color:var(--blue);font-weight:800}
+.trust-strip{background:#fff;border-bottom:1px solid var(--line)}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:22px 0}.trust-item{display:flex;align-items:center;justify-content:center;gap:12px;padding:4px 15px;border-right:1px solid var(--line)}.trust-item:last-child{border:0}.trust-symbol{font-size:23px;color:var(--cyan)}.trust-item strong{display:block;font:800 13px 'Manrope',sans-serif;color:var(--navy)}.trust-item small{display:block;color:var(--muted);font-size:11px}
+section.content-section{padding:82px 0}.section-intro{text-align:center;max-width:700px;margin:0 auto 38px}.section-intro .eyebrow{justify-content:center}.section-intro h2{font-size:clamp(29px,3.5vw,42px);letter-spacing:-1.3px;margin:13px 0}.section-intro p{margin:0;color:var(--muted)}
+.services{background:#f7fbfe}.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px 21px;transition:.2s ease}.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#b6ddec}.service-icon{width:48px;height:48px;border-radius:15px;background:#eaf7fc;color:var(--blue);display:grid;place-items:center;font-size:22px;margin-bottom:18px}.service-card h3{font-size:16px;margin-bottom:9px}.service-card p{font-size:13px;color:var(--muted);margin:0}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:58px;align-items:center}.about-photo{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:#e9f4fa;position:relative}.about-photo img{width:100%;height:430px;object-fit:cover}.about-copy h2{font-size:clamp(30px,3.5vw,43px);letter-spacing:-1.3px;margin:13px 0 18px}.about-copy p{color:var(--muted);font-size:15px}.about-callout{border-left:3px solid var(--cyan);padding:12px 0 12px 17px;color:var(--blue);font:700 17px 'Manrope',sans-serif;margin:22px 0}.pill-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.pill{padding:8px 12px;border:1px solid var(--line);border-radius:30px;color:#42647d;font-size:12px;font-weight:700;background:#fff}
+.gallery{background:var(--pale)}.gallery-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:15px}.gallery-grid a{border-radius:17px;overflow:hidden;display:block;background:#e2eef5;min-height:210px}.gallery-grid img{width:100%;height:100%;min-height:210px;object-fit:cover;transition:transform .3s}.gallery-grid a:hover img{transform:scale(1.04)}
+.visit{background:#fff}.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.visit-card{border:1px solid var(--line);border-radius:20px;padding:28px;background:#fff}.visit-card h3{font-size:19px;margin-bottom:17px}.address{font-size:15px;color:#536e83;margin-bottom:20px}.visit-actions{display:flex;gap:10px;flex-wrap:wrap}.hours-note{background:#f0f8fc;padding:13px 15px;border-radius:12px;color:#557186;font-size:13px}
+.contact-band{background:linear-gradient(115deg,#082f55,#07539b 68%,#087bb7);padding:62px 0;color:#fff}.contact-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}.contact-band h2{color:#fff;font-size:clamp(27px,3.5vw,39px);margin-bottom:9px}.contact-band p{margin:0;color:#d5eaf7}.contact-band .btn-outline{border-color:#a7d9ef;color:#fff;background:transparent}
+footer{padding:30px 0 24px;background:#072744;color:#c3d6e5}.footer-main{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-bottom:23px;border-bottom:1px solid rgba(255,255,255,.13)}.footer-brand{display:flex;align-items:center;gap:12px}.footer-brand img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:12px;padding:3px}.footer-brand strong{display:block;color:#fff;font:800 15px 'Manrope',sans-serif}.footer-brand small{font-size:11px;color:#9fc7df}.socials{display:flex;gap:10px}.socials a{width:40px;height:40px;border:1px solid rgba(255,255,255,.24);border-radius:12px;display:grid;place-items:center;text-decoration:none;color:#fff;font-weight:800}.socials a:hover{background:rgba(255,255,255,.12)}.footer-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:18px;font-size:11px;color:#9bb5c9}.disclaimer{max-width:760px}
+.mobile-bar{display:none}
+@media(max-width:900px){.navlinks{gap:16px}.navlinks a{font-size:13px}.hero-grid{gap:28px}.service-grid{grid-template-columns:repeat(2,1fr)}.about-grid{gap:32px}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid a:first-child{grid-column:span 2}.gallery-grid a:first-child img{height:260px}}
+@media(max-width:720px){.container{width:min(100% - 32px,560px)}.topline .container{justify-content:center;text-align:center;min-height:34px}.topline .top-address{display:none}.nav{min-height:72px}.brand img{width:49px;height:49px}.brand-title{font-size:14px}.brand-sub{font-size:9px}.navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:14px 22px 20px;border-bottom:1px solid var(--line);box-shadow:0 15px 25px rgba(8,55,91,.08);flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{display:block;padding:12px 4px;border-bottom:1px solid #edf4f8;font-size:15px}.nav-actions .btn{display:none}.menu-toggle{display:block}.hero{padding:52px 0 45px}.hero-grid{grid-template-columns:1fr;gap:28px}h1{font-size:clamp(37px,10vw,51px);letter-spacing:-1.8px;margin:14px 0}.hero-copy{font-size:16px}.hero-panel{padding:22px}.panel-logo{width:75px;height:75px}.trust-grid{padding:13px 0;grid-template-columns:1fr;gap:0}.trust-item{justify-content:flex-start;border-right:0;border-bottom:1px solid var(--line);padding:12px 5px}.trust-item:last-child{border:0}.content-section{padding:60px 0!important}.service-grid{gap:11px}.service-card{padding:19px 15px}.service-card h3{font-size:14px}.service-card p{font-size:12px}.service-icon{width:42px;height:42px;margin-bottom:13px}.about-grid{grid-template-columns:1fr;gap:27px}.about-photo img{height:300px}.gallery-grid{gap:10px}.gallery-grid a,.gallery-grid img{min-height:145px}.gallery-grid a:first-child img{height:190px}.visit-grid{grid-template-columns:1fr}.visit-card{padding:22px}.contact-inner{align-items:flex-start;flex-direction:column}.contact-band{padding:48px 0}.footer-main{align-items:flex-start;flex-direction:column}.mobile-bar{position:fixed;z-index:60;bottom:0;left:0;right:0;display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);backdrop-filter:blur(12px)}.mobile-bar .btn{min-height:45px;padding:0 10px}.footer-bottom{padding-bottom:62px}}
+@media(max-width:390px){.service-grid{grid-template-columns:1fr}.hero-buttons .btn{width:100%}.brand-title{font-size:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-
-<div class="topbar">
-  <div class="wrap">
-    <div class="status"><span class="dot"></span> Open now · Closes 9:15 pm</div>
-    <a href="tel:+919825109305">Call: 098251 09305</a>
-  </div>
-</div>
-
-<header class="site">
-  <nav class="wrap">
-    <a class="brand" href="#top">
-      <span class="brand-mark">
-        <img src="logo-small.png" alt="Bholenath Medical Store logo">
-      </span>
-      <span>
-        <span class="brand-name" style="display:block;">Bholenath Medical Store</span>
-        <span class="brand-sub">Bramhapuri, Mundra</span>
-      </span>
-    </a>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">What we stock</a></li>
-      <li><a href="#visit">Hours &amp; location</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a class="btn btn-primary" style="padding:10px 18px;" href="https://wa.me/919825109305" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.75 7.84 19L7.54 18.82L4.42 19.64L5.26 16.6L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.32 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.92C20.27 16.46 16.57 20.15 12.04 20.15Z"/></svg>
-      WhatsApp
-    </a>
-  </nav>
-</header>
-
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow-line"><span class="rule"></span> Pharmacy in Mundra, Kutch</div>
-        <h1>Your neighbourhood medical store, since day one.</h1>
-        <p class="lede">Genuine, doctor-prescribed medicines and everyday health essentials — dispensed with care by people who know your family by name.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="tel:+919825109305">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call the store
-          </a>
-          <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Bholenath+Medical+Store+Bramhapuri+Mundra+Gujarat+370421" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Get directions
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="rating-block">
-          <span class="rating-num">4.6</span>
-          <span>
-            <span class="stars">★★★★★</span><br>
-            <span class="rating-count">11 Google reviews</span>
-          </span>
-        </div>
-        <hr>
-        <div class="info-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Bholenath Medical, Bramhapuri, Mundra, Baroi, Gujarat 370421</span>
-        </div>
-        <div class="info-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          <span class="open-tag"><span class="dot"></span> Open now — closes 9:15 pm</span>
-        </div>
-        <div class="info-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <a href="tel:+919825109305">098251 09305</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="section-num">What we stock</div>
-          <h2>Everything the counter carries</h2>
-        </div>
-        <p>From prescriptions to everyday wellness — if it's not on the shelf, ask; we can often source it.</p>
-      </div>
-      <div class="service-grid">
-        <div class="service-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 8v8M8 12h8"/></svg>
-          <h3>Prescription medicines</h3>
-          <p>Doctor-prescribed medication, dispensed accurately and explained clearly.</p>
-        </div>
-        <div class="service-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.35-9.5-8.5C.5 8 3 4 7 4c2 0 4 1.5 5 3.5C13 5.5 15 4 17 4c4 0 6.5 4 4.5 8.5C19 16.65 12 21 12 21z"/></svg>
-          <h3>OTC &amp; first aid</h3>
-          <p>Pain relief, fever, cold and cough remedies, bandages and everyday first-aid supplies.</p>
-        </div>
-        <div class="service-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v6M12 16v6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg>
-          <h3>Wellness &amp; supplements</h3>
-          <p>Vitamins, protein and health supplements to keep the whole family on track.</p>
-        </div>
-        <div class="service-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><path d="M16 8L2 22M17.5 15H9"/></svg>
-          <h3>Health devices</h3>
-          <p>BP monitors, glucometers, thermometers and other essentials for home monitoring.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" style="padding-top:0;">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="section-num">A look inside</div>
-          <h2>The shelves, the counter, the storefront</h2>
-        </div>
-      </div>
-      <div class="gallery-grid">
-        <a class="gallery-item tall" href="photo-interior-1.jpg" target="_blank" rel="noopener">
-          <img src="photo-interior-1.jpg" alt="Staff and customer at the Bholenath Medical Store counter, shelves stocked with medicines behind">
-        </a>
-        <div class="gallery-col">
-          <a class="gallery-item" href="photo-storefront.jpg" target="_blank" rel="noopener">
-            <img src="photo-storefront.jpg" alt="Bholenath Medical Store storefront signage, chemist and druggist">
-          </a>
-          <a class="gallery-item" href="photo-interior-2.jpg" target="_blank" rel="noopener">
-            <img src="photo-interior-2.jpg" alt="Fully stocked medicine cabinets at Bholenath Medical Store">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap about-grid">
-      <div class="about-figure">
-        <img src="photo-interior-2.jpg" alt="Behind the counter at Bholenath Medical Store, helping a customer">
-        <div class="about-figure-caption">At the counter, most afternoons</div>
-      </div>
-      <div class="about-copy">
-        <div class="section-num">About the store</div>
-        <h2>Reliable medicine, close to home</h2>
-        <p class="quote-strip">Genuine medicines, healthcare products, and quick service — with reliability and care.</p>
-        <p>Bholenath Medical Store has been serving Bramhapuri and the wider Mundra area with doctor-prescribed medicines, OTC products, wellness items, and everyday health supplies. The kind of pharmacy where the person behind the counter recognises your face before you say a word — and where getting your medicine on time doesn't mean a trip out of town.</p>
-        <p>Rated 4.6 out of 5 by the local community, on the strength of consistent stock, fair prices and a team that takes the time to explain dosage properly.</p>
-        <div class="badge-row">
-          <span class="badge">Genuine medicines</span>
-          <span class="badge">Quick service</span>
-          <span class="badge">Trusted locally</span>
-          <span class="badge">Doctor-prescribed &amp; OTC</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOURS / VISIT -->
-  <section class="visit" id="visit">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="section-num">Plan your visit</div>
-          <h2>Hours &amp; location</h2>
-        </div>
-      </div>
-    </div>
-    <div class="wrap" style="padding:0;">
-      <div class="visit-grid">
-        <div class="visit-panel">
-          <h3>Store hours</h3>
-          <table class="hours-table">
-            <tr><td>Monday</td><td>Open</td></tr>
-            <tr><td>Tuesday</td><td>Open</td></tr>
-            <tr><td>Wednesday</td><td>Open</td></tr>
-            <tr><td>Thursday</td><td>Open</td></tr>
-            <tr><td>Friday</td><td>Open</td></tr>
-            <tr><td>Saturday</td><td>Open</td></tr>
-            <tr class="hours-today"><td>Today</td><td>Open · Closes 9:15 pm</td></tr>
-          </table>
-          <p class="note">Hours as listed on Google — always welcome to call ahead if you're arriving close to closing.</p>
-        </div>
-        <div class="visit-panel">
-          <h3>Find us</h3>
-          <div class="info-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Bholenath Medical, Bramhapuri, Mundra, Baroi, Gujarat 370421</span>
-          </div>
-          <div class="info-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+919825109305">098251 09305</a>
-          </div>
-          <div class="cta-row" style="margin-top:20px;">
-            <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Bholenath+Medical+Store+Bramhapuri+Mundra+Gujarat+370421" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Open in Google Maps
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BAND -->
-  <section class="cta-band" id="contact">
-    <div class="wrap">
-      <h2>Need a medicine today?</h2>
-      <p>Call ahead to check stock, or message on WhatsApp — quickest way to reach the counter.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="tel:+919825109305">Call 098251 09305</a>
-        <a class="btn btn-ghost" href="https://wa.me/919825109305" target="_blank" rel="noopener">Message on WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
+<div class="topline"><div class="container"><span>Serving everyday healthcare needs in Mundra</span><a href="tel:+919825109305">Call 098251 09305</a><span class="top-address">Bramhapuri · Mundra · Gujarat 370421</span></div></div>
+<header><div class="container nav">
+<a class="brand" href="#home" aria-label="Bholenath Medical Store home"><img src="logo-small.png" alt="Bholenath Medical Store original logo"><span><span class="brand-title">Bholenath Medical Store</span><span class="brand-sub">BMS — BETTER MEDICAL SOLUTIONS</span></span></a>
+<nav class="navlinks" id="siteNav" aria-label="Main navigation"><a href="#services">Services</a><a href="#about">About us</a><a href="#gallery">Store gallery</a><a href="#visit">Visit us</a><a href="#contact">Contact</a></nav>
+<div class="nav-actions"><a class="btn btn-blue" href="https://wa.me/919825109305" target="_blank" rel="noopener">WhatsApp us</a><button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button></div>
+</div></header>
+<main id="home">
+<section class="hero"><div class="container hero-grid"><div><div class="eyebrow">Your pharmacy in Mundra</div><h1>Everyday healthcare, <span>closer to home.</span></h1><p class="hero-copy">Medicines and healthcare essentials for your everyday needs, with helpful service and a focus on responsible dispensing.</p><div class="hero-buttons"><a class="btn btn-blue" href="tel:+919825109305">☎ &nbsp; Call the store</a><a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Bholenath+Medical+Store+Bramhapuri+Mundra+Gujarat+370421" target="_blank" rel="noopener">⌖ &nbsp; Get directions</a></div><div class="hero-note"><span class="check">✓</span> Call or WhatsApp to check medicine availability</div></div>
+<aside class="hero-panel"><div class="panel-inner"><img class="panel-logo" src="logo-small.png" alt="BMS logo"><div class="panel-heading">Bholenath Medical Store</div><div class="panel-caption">BMS — Better Medical Solutions</div><div class="panel-divider"></div><div class="quick-info"><div class="quick-row"><span class="quick-icon">⌖</span><span><strong>Find our store</strong>Bramhapuri, Mundra, Baroi, Gujarat 370421</span></div><div class="quick-row"><span class="quick-icon">☎</span><span><strong>Speak to our team</strong><a href="tel:+919825109305">098251 09305</a></span></div><div class="quick-row"><span class="quick-icon">◉</span><span><strong>WhatsApp</strong><a href="https://wa.me/919825109305" target="_blank" rel="noopener">Message the store</a></span></div></div></div></aside></div></section>
+<div class="trust-strip"><div class="container trust-grid"><div class="trust-item"><span class="trust-symbol">✚</span><span><strong>Prescription medicines</strong><small>Dispensed responsibly</small></span></div><div class="trust-item"><span class="trust-symbol">⌂</span><span><strong>Everyday healthcare</strong><small>Essentials for the family</small></span></div><div class="trust-item"><span class="trust-symbol">♡</span><span><strong>Personal assistance</strong><small>Call ahead for availability</small></span></div></div></div>
+<section class="content-section services" id="services"><div class="container"><div class="section-intro"><div class="eyebrow">Our pharmacy</div><h2>Healthcare essentials for everyday life</h2><p>Explore the broad range of products available at our store. Contact us to confirm availability before visiting.</p></div><div class="service-grid">
+<article class="service-card"><div class="service-icon">✚</div><h3>Prescription medicines</h3><p>Doctor-prescribed medicines dispensed in accordance with the prescription.</p></article>
+<article class="service-card"><div class="service-icon">♡</div><h3>OTC &amp; first aid</h3><p>Everyday over-the-counter products and first-aid essentials.</p></article>
+<article class="service-card"><div class="service-icon">✧</div><h3>Wellness products</h3><p>Vitamins, supplements and selected wellness essentials.</p></article>
+<article class="service-card"><div class="service-icon">⌁</div><h3>Health devices</h3><p>Selected home health monitoring devices and related accessories.</p></article>
+</div></div></section>
+<section class="content-section" id="about"><div class="container about-grid"><div class="about-photo"><img src="photo-storefront.jpg" alt="Bholenath Medical Store storefront in Mundra" loading="lazy"></div><div class="about-copy"><div class="eyebrow">About BMS</div><h2>A local pharmacy focused on your everyday needs.</h2><div class="about-callout">BMS — Better Medical Solutions</div><p>Bholenath Medical Store serves customers in Bramhapuri and the wider Mundra area with prescription medicines and everyday healthcare products. Our aim is to make accessing essential pharmacy products straightforward and convenient.</p><p>For medicine availability, prescription-related queries or directions to the store, contact us directly by phone or WhatsApp.</p><div class="pill-row"><span class="pill">Mundra, Kutch</span><span class="pill">Prescription medicines</span><span class="pill">Everyday essentials</span><span class="pill">Direct assistance</span></div></div></div></section>
+<section class="content-section gallery" id="gallery"><div class="container"><div class="section-intro"><div class="eyebrow">Our store</div><h2>Visit Bholenath Medical Store</h2><p>A few views of our storefront and pharmacy.</p></div><div class="gallery-grid"><a href="photo-storefront.jpg" target="_blank" rel="noopener"><img src="photo-storefront.jpg" alt="Bholenath Medical Store storefront" loading="lazy"></a><a href="photo-interior-1.jpg" target="_blank" rel="noopener"><img src="photo-interior-1.jpg" alt="Inside Bholenath Medical Store" loading="lazy"></a><a href="photo-interior-2.jpg" target="_blank" rel="noopener"><img src="photo-interior-2.jpg" alt="Medicine shelves at Bholenath Medical Store" loading="lazy"></a></div></div></section>
+<section class="content-section visit" id="visit"><div class="container"><div class="section-intro"><div class="eyebrow">Find us</div><h2>We’re here in Mundra</h2><p>Contact the store before your visit to confirm current hours and product availability.</p></div><div class="visit-grid"><div class="visit-card"><h3>Store address</h3><p class="address">Bholenath Medical Store<br>Bramhapuri, Mundra, Baroi<br>Gujarat 370421</p><div class="visit-actions"><a class="btn btn-blue" href="https://www.google.com/maps/dir/?api=1&destination=Bholenath+Medical+Store+Bramhapuri+Mundra+Gujarat+370421" target="_blank" rel="noopener">Open Google Maps</a></div></div><div class="visit-card"><h3>Contact the store</h3><p class="address">For medicine availability, general enquiries and assistance, contact us directly.</p><div class="visit-actions"><a class="btn btn-blue" href="tel:+919825109305">Call 098251 09305</a><a class="btn btn-outline" href="https://wa.me/919825109305" target="_blank" rel="noopener">WhatsApp</a></div><p class="hours-note" style="margin:18px 0 0">Store timings may vary. Please call ahead, especially when visiting near closing time.</p></div></div></div></section>
+<section class="contact-band" id="contact"><div class="container contact-inner"><div><h2>Looking for a medicine?</h2><p>Call or WhatsApp Bholenath Medical Store to check availability.</p></div><div class="hero-buttons" style="margin:0"><a class="btn btn-cyan" href="tel:+919825109305">Call the store</a><a class="btn btn-outline" href="https://wa.me/919825109305" target="_blank" rel="noopener">WhatsApp us</a></div></div></section>
 </main>
-
-<footer>
-  <div class="wrap footer-grid">
-    <div style="display:flex; gap:14px; align-items:flex-start;">
-      <img src="logo-small.png" alt="" style="width:34px; height:34px; object-fit:contain; margin-top:2px;">
-      <div>
-        <div class="footer-brand">Bholenath Medical Store</div>
-        <div>Bramhapuri, Mundra, Baroi, Gujarat 370421</div>
-        <div style="margin-top:4px;">Open today · Closes 9:15 pm</div>
-      </div>
-    </div>
-    <div class="social-links">
-      <a href="https://www.instagram.com/bholenathmedicalstore/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-      </a>
-      <a href="https://www.facebook.com/bms9666" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Bholenath+Medical+Store+Bramhapuri+Mundra+Gujarat+370421" target="_blank" rel="noopener" aria-label="Directions">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </a>
-    </div>
-  </div>
-</footer>
-
+<footer><div class="container"><div class="footer-main"><div class="footer-brand"><img src="logo-small.png" alt=""><span><strong>Bholenath Medical Store</strong><small>BMS — Better Medical Solutions · Mundra</small></span></div><div class="socials"><a href="https://www.instagram.com/bholenathmedicalstore/" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.facebook.com/bms9666/" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="https://www.google.com/maps/dir/?api=1&destination=Bholenath+Medical+Store+Bramhapuri+Mundra+Gujarat+370421" target="_blank" rel="noopener" aria-label="Google Maps">⌖</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Bholenath Medical Store. All rights reserved.</span><span class="disclaimer">Medicines should be used only as directed by a registered medical practitioner. Product availability is subject to stock. This website does not provide medical diagnosis or treatment advice.</span></div></div></footer>
+<div class="mobile-bar"><a class="btn btn-blue" href="tel:+919825109305">☎ &nbsp; Call</a><a class="btn btn-cyan" href="https://wa.me/919825109305" target="_blank" rel="noopener">WhatsApp</a></div>
+<script>
+const toggle=document.getElementById('menuToggle');const nav=document.getElementById('siteNav');
+toggle.addEventListener('click',()=>{const opened=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(opened));toggle.setAttribute('aria-label',opened?'Close navigation menu':'Open navigation menu');toggle.textContent=opened?'×':'☰'});
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
